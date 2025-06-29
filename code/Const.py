@@ -9,6 +9,13 @@ C_CYAN = (0, 128, 128)
 
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
+
+ENTITY_HEALTH = {
+    'Player1': 300,
+    'Enemy1': 50,
+    'Enemy2': 60,
+}
+
 ENTITY_SPEED = {
     'Level1Bg0': 0,
     'Level1Bg1': 1,
@@ -21,6 +28,7 @@ ENTITY_SPEED = {
     'Enemy1': 2,
     'Enemy2': 1,
 }
+
 
 # M
 MENU_OPTION = ('NEW GAME 1P',
