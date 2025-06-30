@@ -8,11 +8,13 @@ from code.PlayerShot import PlayerShot
 class Player(Entity):
 
     def __init__(self, name: str, position: tuple):
+        # Entity parameters and shot delay
         super().__init__(name, position)
         self.shot_delay = ENTITY_SHOT_DELAY[self.name]
 
 
     def move(self, ):
+        # Configuration for the movement using the keyboard
         pressed_key = pygame.key.get_pressed()
         if pressed_key[pygame.K_w] and self.rect.top > 0:
             self.rect.centery -= ENTITY_SPEED[self.name]
@@ -25,6 +27,7 @@ class Player(Entity):
         pass
 
     def shoot(self):
+        # Player shooting configuration
         self.shot_delay -= 1
         if self.shot_delay == 0:
             self.shot_delay = ENTITY_SHOT_DELAY[self.name]

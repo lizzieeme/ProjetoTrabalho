@@ -6,14 +6,17 @@ from code.Entity import Entity
 class Enemy(Entity):
 
     def __init__(self, name: str, position: tuple):
+        # Entity parameters and shot delay for the enemies
         super().__init__(name, position)
         self.shot_delay = ENTITY_SHOT_DELAY[self.name]
 
     def move(self, ):
+        # Enemy movement configuration
         self.rect.centerx -= ENTITY_SPEED[self.name]
 
 
     def shoot(self):
+        # Enemy shooting configuration
         self.shot_delay -= 1
         if self.shot_delay == 0:
             self.shot_delay = ENTITY_SHOT_DELAY[self.name]
